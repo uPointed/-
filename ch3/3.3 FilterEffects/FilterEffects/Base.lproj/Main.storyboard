@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FilterEffects" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Se0-fx-eLq"/>
+                        <viewControllerLayoutGuide type="bottom" id="ugN-qS-7WZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raW-FG-AiN">
+                                <rect key="frame" x="0.0" y="42" width="763" height="476"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="763" id="GVn-07-INr"/>
+                                    <constraint firstAttribute="height" constant="476" id="yey-lE-LuF"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nf2-Cp-WRS">
+                                <rect key="frame" x="88" y="336" width="133" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="vKl-ZA-Bap"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="旧色调"/>
+                                    <segment title="高斯模糊"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSelectedWithSender:" destination="vXZ-lx-hvc" eventType="valueChanged" id="dbo-3d-foh"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-tn-3EJ">
+                                <rect key="frame" x="64" y="462" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="uzI-2L-wa9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="mouse.png" maximumValueImage="elephant.png" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-FW-ImJ">
+                                <rect key="frame" x="86" y="559" width="635" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeValueWithSender:" destination="vXZ-lx-hvc" eventType="valueChanged" id="jHD-Ed-Rgx"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="raW-FG-AiN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="3" id="1aJ-RS-sTI"/>
+                            <constraint firstItem="raW-FG-AiN" firstAttribute="top" secondItem="Se0-fx-eLq" secondAttribute="bottom" constant="25" id="4eD-bD-qrx"/>
+                            <constraint firstItem="raW-FG-AiN" firstAttribute="top" secondItem="Se0-fx-eLq" secondAttribute="bottom" id="7cv-Lb-f5s"/>
+                            <constraint firstItem="raW-FG-AiN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="Et9-sA-AG6"/>
+                            <constraint firstItem="ya9-tn-3EJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="44" id="HqW-KV-5rI"/>
+                            <constraint firstItem="nf2-Cp-WRS" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="357" id="O03-5g-gQ0"/>
+                            <constraint firstAttribute="centerX" secondItem="nf2-Cp-WRS" secondAttribute="centerX" id="PTA-6P-wAy"/>
+                            <constraint firstItem="ya9-tn-3EJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="91" id="V4J-aQ-Kwj">
+                                <variation key="heightClass=regular-widthClass=compact" constant="46"/>
+                            </constraint>
+                            <constraint firstItem="ya9-tn-3EJ" firstAttribute="top" secondItem="nf2-Cp-WRS" secondAttribute="bottom" constant="98" id="ZqF-qZ-8Nm"/>
+                            <constraint firstItem="nf2-Cp-WRS" firstAttribute="top" secondItem="raW-FG-AiN" secondAttribute="bottom" constant="-185" id="ftY-RQ-xnl"/>
+                            <constraint firstItem="nf2-Cp-WRS" firstAttribute="top" secondItem="raW-FG-AiN" secondAttribute="bottom" constant="74" id="neR-LP-nzY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="raW-FG-AiN" secondAttribute="trailing" constant="3" id="qej-kH-Wjx"/>
+                            <constraint firstItem="nf2-Cp-WRS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="68" id="tGo-eZ-g39"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1aJ-RS-sTI"/>
+                                <exclude reference="7cv-Lb-f5s"/>
+                                <exclude reference="qej-kH-Wjx"/>
+                                <exclude reference="O03-5g-gQ0"/>
+                                <exclude reference="PTA-6P-wAy"/>
+                                <exclude reference="neR-LP-nzY"/>
+                                <exclude reference="V4J-aQ-Kwj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="1aJ-RS-sTI"/>
+                                <include reference="7cv-Lb-f5s"/>
+                                <include reference="qej-kH-Wjx"/>
+                                <include reference="O03-5g-gQ0"/>
+                                <include reference="PTA-6P-wAy"/>
+                                <include reference="neR-LP-nzY"/>
+                                <include reference="V4J-aQ-Kwj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="raW-FG-AiN" id="tDt-4C-mh3"/>
+                        <outlet property="label" destination="ya9-tn-3EJ" id="GB6-Qe-AGl"/>
+                        <outlet property="slider" destination="yI1-FW-ImJ" id="uYl-Gw-Wx8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="452.34375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="elephant.png" width="32" height="23"/>
+        <image name="mouse.png" width="21" height="23"/>
+    </resources>
+</document>
